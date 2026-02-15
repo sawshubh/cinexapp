@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block title %}Home | CineX{% endblock %} {% block
+mybody %}
+<div class="container" style="padding: 40px">
+  <h1>Welcome to CineX</h1>
+
+  <div style="margin-top: 20px">
+    <ul>
+      {% comment %}
+      <li><a href="{% url 'movies-list' %}">Movies</a></li>
+      <li><a href="{% url 'analytics-dashboard' %}">Analytics</a></li>
+      <li><a href="{% url 'login' %}">Sign In</a></li>
+      {% endcomment %}
+      <li><a href="{% url 'manage-movies' %}">CSV Insertion</a></li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

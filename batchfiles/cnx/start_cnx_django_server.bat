@@ -1,4 +1,3 @@
-@echo off
 title CNX Django Server
 cd\cinexapp
 call env_310\Scripts\activate

@@ -1,0 +1,41 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}CineX{% endblock %}</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    {% block extra_css %}{% endblock %}
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="/">CineX</a>
+        </div>
+      </nav>
+    </header>
+
+    <div id="main-body"></div>
+    {% block mybody %} {% endblock %} {% block myfooter %}
+    <footer>
+      <p>&copy; {% now "Y" %} CineX. All rights reserved.</p>
+    </footer>
+    {% endblock %}
+    <!-- Standard Scripts -->
+    <script
+      src="{% static 'cwf/js/std/jquery-3.6.0.js' %}"
+      charset="utf-8"
+      type="text/javascript"
+    ></script>
+    <script
+      src="{% static 'cwf/js/std/jquery.haml-1.3.js' %}"
+      charset="utf-8"
+      type="text/javascript"
+    ></script>
+  </body>
+</html>
