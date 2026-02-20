@@ -1,6 +1,6 @@
 from django.urls import path, re_path
 from . import app_init
-from cwf.cnx.webservice import cnx_movies
+from cwf.cnx.webservice import cnx_webservice
 
 urlpatterns = [
     path("", app_init.show_homepage),
@@ -8,5 +8,9 @@ urlpatterns = [
     path("home/", app_init.index, name="index"),
     path("onboard-user/", app_init.onboard_user, name="onboard-user"),
     # cnx webservice
-    # path("movie-data-insertion/", cnx_movies.onboard_user, name="movie-data-insertion"),
+    path(
+        "cnx-dashboard",
+        cnx_webservice.insertion_page,
+        name="cnx_dashboard",
+    ),
 ]

@@ -21,6 +21,11 @@ def show_homepage(request):
 
 
 def show_login_page(request):
+
+    if request.user.is_authenticated:
+        print("redirecting to home...!")
+        return HttpResponseRedirect("/home")
+
     login_page = "cwf/login.html"
     if request.get_host().find(":8025") != -1:
         login_page = "cwf/cnx/cnx_login.html"
@@ -50,7 +55,8 @@ def show_login_page(request):
         else:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect("cwf/cnx/cnx_index.html")
+                print("redirecting to home...!")
+                return HttpResponseRedirect("/home.html")
             else:
                 template_dict["is_user_inactive"] = True
                 return render(request, login_page, template_dict)

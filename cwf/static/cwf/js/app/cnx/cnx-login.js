@@ -3,6 +3,7 @@ cwf.cnxEntryForms = (function () {
   function initCnxEntryForms() {
     uiSelectors.moduleDiv = $("body");
     uiSelectors.moduleDiv.haml(setupCnxEntryFormsUI());
+    console.log(cwf.currentUser);
 
     setupUITriggers();
   }

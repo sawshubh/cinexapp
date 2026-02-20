@@ -1,0 +1,13 @@
+{% extends "cwf/cnx/cnx_base.html" %} {% load static %} {% block title %}CNX
+Insertion{% endblock %} {% block mybody %}
+<div id="cnx-app"></div>
+{% endblock %} {% block extra_js %}
+<script>
+  var cwf = cwf || {};
+  window.onload = function () {
+    console.log("loading insertion");
+    cwf.cnxInsertion.manageInsertionUI();
+  };
+</script>
+<script src="{% static 'cwf/js/app/cnx/cnx-manage-insertion.js' %}"></script>
+{% endblock %}
